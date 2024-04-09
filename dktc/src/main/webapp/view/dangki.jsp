@@ -49,7 +49,7 @@
 										Tài khoản </a>
 									<ul class="dropdown-menu dropdown-menu-dark"
 										aria-labelledby="navbarDarkDropdownMenuLink">
-										<li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+										<li><a class="dropdown-item" href="/sqa/logout">Đăng xuất</a></li>
 									</ul></li>
 							</ul>
 					</a></li>

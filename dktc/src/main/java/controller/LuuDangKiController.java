@@ -32,8 +32,9 @@ public class LuuDangKiController extends HttpServlet {
 			} else {
 				boolean kq = (new DangKiDAO()).luuDKcuaSV(listDk);
 				if(kq) {
-					req.setAttribute("ok", "Đăng kí thành công");
-					resp.sendRedirect("home");
+					req.setAttribute("ok", "ok");
+					RequestDispatcher requestDispatcher = req.getRequestDispatcher("view/success.jsp");
+					requestDispatcher.forward(req, resp);
 				}
 				else {
 					req.setAttribute("error", "Đăng kí thất bại");
