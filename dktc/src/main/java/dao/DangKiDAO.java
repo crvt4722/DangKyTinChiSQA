@@ -100,12 +100,16 @@ public class DangKiDAO extends DAO {
 			psXoa.setInt(1, idSVK);
 			psXoa.setInt(2, idKihoc);
 			psXoa.executeUpdate();
-			for (DangKiHoc dkhcu : listDKcu) {
-				PreparedStatement psXoaSiSoLHP = con.prepareStatement(sqlXoaSiSoLHP);
-				psXoaSiSoLHP.setInt(1, dkhcu.getLopHP().getId());
+			if(listDKcu!=null) {
+				for(DangKiHoc dkhcu : listDKcu) {
+					PreparedStatement psXoaSiSoLHP = con.prepareStatement(sqlXoaSiSoLHP);
+					psXoaSiSoLHP.setInt(1, dkhcu.getLopHP().getId());
+					
+					psXoaSiSoLHP.executeUpdate();
+				}
 				
-				psXoaSiSoLHP.executeUpdate();
 			}
+				
 		//them lai dang ki nhu dang ki moi
 			for(DangKiHoc dk : listDK){
 				PreparedStatement psThem = con.prepareStatement(sqlThem);

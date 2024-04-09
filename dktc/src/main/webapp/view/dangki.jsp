@@ -105,7 +105,7 @@
 									<th scope="col">Số tín chỉ</th>
 									<th scope="col">Tên lớp học phần</th>
 									<th scope="col">Xem lịch</th>
-									<th scope="col">Sửa</th>
+									
 									<th scope="col">Xóa</th>
 								</tr>
 							</thead>
@@ -120,11 +120,9 @@
 										
 										<td style="text-align: center; padding: 0 15px 0 15px;">${i.lopHP.ten}</td>
 
-										<td style="text-align: center;padding: 0 15px 0 15px;"><a href="/dktc/xemtkb?idLHP=${i.lopHP.id}">Click de
+										<td style="text-align: center;padding: 0 15px 0 15px;"><a href="/dktc/xemtkb?idLHP=${i.lopHP.id}&tenLHP=${i.lopHP.ten}">Click de
 												xem</a>
-										<td style="text-align: center; padding: 0 15px 0 15px;">
-											<a href="/dktc/chonLHP?idMH=${i.lopHP.monHocKiHoc.id}">Sửa</a>
-										</td>
+										
 										<td style="text-align: center; padding: 0 15px 0 15px;"><a
 											href="/dktc/xoadangki?idLHP=${i.lopHP.id}"
 											onclick="return confirm('Bạn muốn xóa lớp học phần khỏi danh sách đăngkí?');">Xóa</a></td>

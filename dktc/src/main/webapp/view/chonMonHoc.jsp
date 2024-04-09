@@ -107,7 +107,7 @@
 			<td style="text-align: center;padding: 0 15px 0 15px;">${i.monHoc.stc}</td>
 
 			<td style="text-align: center;text-align: center; padding: 0 15px 0 15px;"><a
-				href="/dktc/chonLHP?idMH=${i.id}">Chọn</a></td>
+				href="/dktc/chonLHP?idMH=${i.id}&tenMH=${i.monHoc.ten}">Chọn</a></td>
         <c:set var="count" value="${count + 1}" />
 
 		</tr>

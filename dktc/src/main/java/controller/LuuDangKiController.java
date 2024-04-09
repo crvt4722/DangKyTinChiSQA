@@ -23,9 +23,9 @@ public class LuuDangKiController extends HttpServlet {
 		if (arrayList != null) {
 			ArrayList<DangKiHoc> listDk = arrayList;
 			int tongTC =   (int) session.getAttribute("tongTcSession");
-			if (tongTC < 5) {
+			if (tongTC < 13) {
 				System.out.println("tongTC"+ tongTC);
-				req.setAttribute("error", "Số tín phải tối thiểu 10 tín");
+				req.setAttribute("error", "Số tín phải tối thiểu 13 tín");
 				RequestDispatcher requestDispatcher = req.getRequestDispatcher("view/dangki.jsp");
 				requestDispatcher.forward(req, resp);
 				
@@ -44,7 +44,7 @@ public class LuuDangKiController extends HttpServlet {
 			}
 		} 
 		else {
-			req.setAttribute("error", "Số tín phải tối thiểu 10 tín");
+			req.setAttribute("error", "Số tín phải tối thiểu 13 tín");
 			RequestDispatcher requestDispatcher = req.getRequestDispatcher("view/dangki.jsp");
 			requestDispatcher.forward(req, resp);
 		}

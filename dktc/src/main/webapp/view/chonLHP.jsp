@@ -86,7 +86,7 @@
             <div>
               <div class="row mb-3">
                 <h4 class="col-lg-3 col-sm-12">Tên môn học</h4>
-                <h4 class="col-lg-9 col-sm-12">XXXX</h4>
+                <h4 class="col-lg-9 col-sm-12">${requestScope.tenMH}</h4>
               </div>
               <table class="table table-bordered border-secondary">
                 <thead>
@@ -111,7 +111,7 @@
 				<td style="text-align: center; padding: 0 15px 0 15px;">${i.sisotoida}</td>
 				<td style="text-align: center; padding: 0 15px 0 15px;">${i.sisothucte}</td>
 				<td style="text-align: center; padding: 0 15px 0 15px;">
-					<a href = "/dktc/xemtkb?idLHP=${i.id}" >Xem lịch</a>
+					<a href = "/dktc/xemtkb?idLHP=${i.id}&tenLHP=${i.ten}" >Xem lịch</a>
 				</td>
 				<c:choose>
 			    <c:when test="${i.sisotoida > i.sisothucte}">

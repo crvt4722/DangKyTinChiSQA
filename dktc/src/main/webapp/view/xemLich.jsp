@@ -86,7 +86,7 @@
             <div>
               <div class="row mb-3">
                 <h4 class="col-lg-3 col-sm-12">Lớp học phần</h4>
-                <h4 class="col-lg-9 col-sm-12">XXXX</h4>
+                <h4 class="col-lg-9 col-sm-12">${requestScope.tenLHP}</h4>
               </div>
               <table class="table table-bordered border-secondary">
                 <thead>

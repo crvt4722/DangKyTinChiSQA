@@ -25,11 +25,12 @@ public class XemTKBController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int idLHP = Integer.parseInt(req.getParameter("idLHP"));
+		String tenLHP = req.getParameter("tenLHP");
 		LichHocDAO lichHocDAO = new LichHocDAO();
 		List<LichHocDTO> lichHocDTOs = lichHocDAO.getLichHocByLHPId(idLHP);
 		HttpSession session = req.getSession();
 		session.setAttribute("lichHocDTOs", lichHocDTOs);
-		System.out.print(lichHocDTOs);
+		req.setAttribute("tenLHP", tenLHP);
 		RequestDispatcher  requestDispatcher= req.getRequestDispatcher("view/xemLich.jsp");
 		requestDispatcher.forward(req, resp);
 	}

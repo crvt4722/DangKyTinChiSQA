@@ -14,9 +14,11 @@ import javax.servlet.http.HttpSession;
 import dao.DangKiDAO;
 import dao.LichHocDAO;
 import dao.LopHocPhanDAO;
+import dao.MonHocKiHocDAO;
 import model.DangKiHoc;
 import model.LichHoc;
 import model.LopHocPhan;
+import model.MonHocKiHoc;
 import model.SinhVienKhoa;
 
 @WebServlet("/chonLHP")
@@ -27,6 +29,8 @@ public class ChonLHPController extends HttpServlet {
 		int idSVK = (int) session.getAttribute("idSVK");
 		int idKiHoc = (int) session.getAttribute("idKihoc");
 		int idMHKH = Integer.parseInt(req.getParameter("idMH"));
+		String tenMH = req.getParameter("tenMH");
+		req.setAttribute("tenMH", tenMH);
 		// lay danh sach mon hoc duoc dang ki trong ki
 		ArrayList<LopHocPhan> listLHP = (new LopHocPhanDAO()).getLHPtheoMH(idMHKH);
 		// loai cac LHP trung lich voi cac lop da hoc
@@ -56,6 +60,7 @@ public class ChonLHPController extends HttpServlet {
 				}
 			}
 		}
+		
 		session.setAttribute("listLHP", listLHP);
 		RequestDispatcher requestDispatcher = req.getRequestDispatcher("view/chonLHP.jsp");
 		requestDispatcher.forward(req, resp);
