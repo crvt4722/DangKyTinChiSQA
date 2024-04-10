@@ -9,7 +9,7 @@
 <body>
 	<script>
         alert("Đăng kí thành công");
-        window.location.href = "/sqa/home";
+        window.location.href = "/dktc/home";
 
 </script>
 </body>
