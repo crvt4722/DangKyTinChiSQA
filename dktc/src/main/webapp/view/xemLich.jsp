@@ -65,7 +65,7 @@
                       class="dropdown-menu dropdown-menu-dark"
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
-                      <li><a class="dropdown-item" href="/sqa/logout">Đăng xuất</a></li>
+                      <li><a class="dropdown-item" href="/dktc/logout">Đăng xuất</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -86,7 +86,7 @@
           <div>
             <div>
               <div class="row mb-3">
-                <h4 class="col-lg-3 col-sm-12">Lớp học phần</h4>
+                <h4 class="col-lg-3 col-sm-12">Lớp học phần:</h4>
                 <h4 class="col-lg-9 col-sm-12">${requestScope.tenLHP}</h4>
               </div>
               <table class="table table-bordered border-secondary">
@@ -102,14 +102,14 @@
                 </thead>
                 <tbody>
                 <c:set var="count" value="1" />
-                <c:forEach items="${sessionScope.lichHocDTOs}" var="i">
+                <c:forEach items="${sessionScope.lichHoc}" var="i">
                   <tr>
                     <td style="text-align: center;">${count}</td>
-                    <td style="text-align: center;">${i.kip}</td>
-                    <td style="text-align: center;">${i.ngay}</td>
-                    <td style="text-align: center;">${i.tuan}</td>
-                    <td style="text-align: center;">${i.hodemgiangvien} ${i.tengiangvien} </td>
-                    <td style="text-align: center;">${i.phonghoc}</td>
+                    <td style="text-align: center;">${i.kip.ten}</td>
+                    <td style="text-align: center;">${i.ngay.ten}</td>
+                    <td style="text-align: center;">${i.tuan.ten}</td>
+                    <td style="text-align: center;">${i.giangVien.hodem} ${i.giangVien.ten}  </td>
+                    <td style="text-align: center;">${i.phongHoc.ten}</td>
                     <c:set var="count" value="${count + 1}" />
                   </tr>
                   </c:forEach>

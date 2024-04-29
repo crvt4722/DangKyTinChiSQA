@@ -13,7 +13,8 @@ import javax.servlet.http.HttpSession;
 public class DangXuatController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		resp.sendRedirect("/");
+		HttpSession session = req.getSession();
+		session.invalidate();
+		resp.sendRedirect("/dktc");
 	}
 }

@@ -64,7 +64,7 @@
                       class="dropdown-menu dropdown-menu-dark"
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
-                      <li><a class="dropdown-item" href="/sqa/logout">Đăng xuất</a></li>
+                      <li><a class="dropdown-item" href="/dktc/logout">Đăng xuất</a></li>
                     </ul>
                   </li>
                 </ul>

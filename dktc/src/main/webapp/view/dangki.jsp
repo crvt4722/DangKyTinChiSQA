@@ -49,7 +49,7 @@
 										Tài khoản </a>
 									<ul class="dropdown-menu dropdown-menu-dark"
 										aria-labelledby="navbarDarkDropdownMenuLink">
-										<li><a class="dropdown-item" href="/sqa/logout">Đăng xuất</a></li>
+										<li><a class="dropdown-item" href="/dktc/logout">Đăng xuất</a></li>
 									</ul></li>
 							</ul>
 					</a></li>
@@ -120,8 +120,7 @@
 										
 										<td style="text-align: center; padding: 0 15px 0 15px;">${i.lopHP.ten}</td>
 
-										<td style="text-align: center;padding: 0 15px 0 15px;"><a href="/dktc/xemtkb?idLHP=${i.lopHP.id}&tenLHP=${i.lopHP.ten}">Click de
-												xem</a>
+										<td style="text-align: center;padding: 0 15px 0 15px;"><a href="/dktc/xemtkb?idLHP=${i.lopHP.id}&tenLHP=${i.lopHP.ten}">Xem lịch</a>
 										
 										<td style="text-align: center; padding: 0 15px 0 15px;"><a
 											href="/dktc/xoadangki?idLHP=${i.lopHP.id}"

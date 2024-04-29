@@ -13,7 +13,6 @@ import model.LopHocPhan;
 import model.Ngay;
 import model.PhongHoc;
 import model.Tuan;
-import dto.LichHocDTO;
 
 public class LichHocDAO extends DAO {
 	public LichHocDAO() {
@@ -78,51 +77,6 @@ public class LichHocDAO extends DAO {
 		}
 		return kq;
 	}
-	public List<LichHocDTO> getLichHocByLHPId(int lhpId) {
-		List<LichHocDTO> list = new ArrayList<>();
-		String query = "SELECT lhp.id,"
-				+ "	lh.id as Lichhocid, lh.ten as tenLH,"
-				+ "	lh.GiangVienThanhVienid, gvv.hodem as hodemgiangvien ,gvv.ten as tengiangvien,"
-				+ " lh.PhongHocid, ph.ten as phonghoc,"
-				+ " lh.Tuanid, tuan.ten as tuan, lh.Ngayid, ngay.ten as ngay, lh.Kipid, kip.ten as kip"
-				+ " FROM lophocphan lhp"
-				+ " JOIN lichhoc lh on lhp.id = lh.LopHocPhanid"
-				+ " JOIN giangvien gv on lh.GiangVienThanhVienid = gv.ThanhVienid"
-				+ " JOIN thanhvien gvv on gv.ThanhVienid = gvv.id"
-				+ " JOIN phonghoc ph on lh.PhongHocid = ph.id"
-				+ " JOIN tuan on lh.Tuanid = tuan.id"
-				+ " JOIN ngay on lh.Ngayid = ngay.id"
-				+ " JOIN kip on lh.Kipid = kip.id"
-				+ " WHERE lhp.id = ?";
-
-		try (PreparedStatement statement = con.prepareStatement(query)) {
-			statement.setInt(1, lhpId);
-			ResultSet resultSet = statement.executeQuery();
-
-			while (resultSet.next()) {
-				int lophocphanId = resultSet.getInt("id");
-				int Lichhocid = resultSet.getInt("Lichhocid");
-				String tenLH = resultSet.getString("tenLH");
-				int giangvienId = resultSet.getInt("GiangVienThanhVienid");
-				String hodemGiangvien = resultSet.getString("hodemgiangvien");
-				String tenGiangvien = resultSet.getString("tengiangvien");
-				int phonghocId = resultSet.getInt("PhongHocid");
-				String tenPH = resultSet.getString("phonghoc");
-				int tuanId = resultSet.getInt("Tuanid");
-				String tuan = resultSet.getString("tuan");
-				int ngayId = resultSet.getInt("Ngayid");
-				String ngay = resultSet.getString("ngay");
-				int kipId = resultSet.getInt("Kipid");
-				String kip = resultSet.getString("kip");
-
-				LichHocDTO lichHoc = new LichHocDTO(Lichhocid, tenPH, tuan, ngay, kip, hodemGiangvien,tenGiangvien);
-				System.out.println(lichHoc);
-				list.add(lichHoc);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
+	
 
 }

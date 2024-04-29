@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.LichHocDAO;
-import dto.DangKiHocDTO;
-import dto.LichHocDTO;
+
+import model.LichHoc;
 
 @WebServlet(urlPatterns = "/xemtkb")
 public class XemTKBController extends HttpServlet {
@@ -27,9 +28,9 @@ public class XemTKBController extends HttpServlet {
 		int idLHP = Integer.parseInt(req.getParameter("idLHP"));
 		String tenLHP = req.getParameter("tenLHP");
 		LichHocDAO lichHocDAO = new LichHocDAO();
-		List<LichHocDTO> lichHocDTOs = lichHocDAO.getLichHocByLHPId(idLHP);
+		ArrayList<LichHoc> lichHoc = lichHocDAO.getLHcuaLHP(idLHP);
 		HttpSession session = req.getSession();
-		session.setAttribute("lichHocDTOs", lichHocDTOs);
+		session.setAttribute("lichHoc", lichHoc);
 		req.setAttribute("tenLHP", tenLHP);
 		RequestDispatcher  requestDispatcher= req.getRequestDispatcher("view/xemLich.jsp");
 		requestDispatcher.forward(req, resp);
