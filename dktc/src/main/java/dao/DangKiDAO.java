@@ -73,7 +73,6 @@ public class DangKiDAO extends DAO {
 				k.setId(rs.getInt("Khoaid"));
 				svk.setKhoa(k);
 				dk.setSvKhoa(svk);
-				System.out.print(dk.getId() + " " + dk.getLopHP().getTen());
 				kq.add(dk);
 			}
 		} catch (Exception e) {
@@ -85,13 +84,18 @@ public class DangKiDAO extends DAO {
 
 	public boolean luuDKcuaSV(ArrayList<DangKiHoc> listDK){
 		if((listDK == null)|| (listDK.size() ==0)) return false;
+		int tongTC =0;
+		for (int i = 0; i < listDK.size(); i++) {
+			tongTC += listDK.get(i).getLopHP().getMonHocKiHoc().getMonHoc().getStc();
+		}
+		if ( tongTC <13) return false;
 		boolean kq = false;
 		String sqlXoa = "DELETE FROM dangkihoc WHERE SinhVienKhoaid=? AND LopHocPhanid IN (SELECT a.id FROM lophocphan a, monhockihoc b WHERE b.KiHocid = ? AND a.MonHocKiHocid=b.id)";
 		String sqlThem = "INSERT INTO dangkihoc(SinhVienKhoaid,LopHocPhanid) VALUES(?,?)";
 		String sqlUpdateLHP = "update lophocphan set lophocphan.sisothucte = lophocphan.sisothucte+1 where lophocphan.id = ?";
 		String sqlXoaSiSoLHP ="update lophocphan set sisothucte = sisothucte-1 where id =?" ;
 		try{
-			this.con.setAutoCommit(false);
+//			this.con.setAutoCommit(false);
 		//xoa het dang ki cu
 			int idSVK = listDK.get(0).getSvKhoa().getId();
 			int idKihoc = listDK.get(0).getLopHP().getMonHocKiHoc().getKiHoc().getId();
@@ -109,9 +113,11 @@ public class DangKiDAO extends DAO {
 				}
 				
 			}
+			
 				
 		//them lai dang ki nhu dang ki moi
 			for(DangKiHoc dk : listDK){
+				
 				PreparedStatement psThem = con.prepareStatement(sqlThem);
 				PreparedStatement psUpdateLHP = con.prepareStatement(sqlUpdateLHP);
 				psUpdateLHP.setInt(1, dk.getLopHP().getId());
@@ -120,12 +126,12 @@ public class DangKiDAO extends DAO {
 				psThem.executeUpdate();
 				psUpdateLHP.executeUpdate();
 		}
-		this.con.commit();
+//		this.con.commit();
 		kq=true;
 		}
 		catch(Exception e){
 			try{
-				this.con.rollback();
+//				this.con.rollback();
 			}
 			catch(Exception ee){
 				kq=false;
@@ -134,7 +140,7 @@ public class DangKiDAO extends DAO {
 			e.printStackTrace();
 		}finally{
 		try{
-			this.con.setAutoCommit(true);
+//			this.con.setAutoCommit(true);
 		}catch(Exception e){
 		kq=false;
 		e.printStackTrace();

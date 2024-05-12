@@ -25,6 +25,8 @@ public class ChonMonHocController extends HttpServlet {
 		ArrayList<DangKiHoc> arrayList = (ArrayList<DangKiHoc>) session.getAttribute("listDk");
 		ArrayList<DangKiHoc> listDk = arrayList;
 		ArrayList<MonHocKiHoc> listMHKH = (new MonHocKiHocDAO()).getMHcuaSV(idSVK, idKiHoc);
+                System.out.println("mon hoc"+  listMHKH);
+
 		if(listDk != null)
 		for (int i = 0; i < listMHKH.size(); i++) {
 			boolean daDK = false;
@@ -39,6 +41,8 @@ public class ChonMonHocController extends HttpServlet {
 			}
 		}
 		req.setAttribute("listMHKH", listMHKH);
+                System.out.println("mon hoc"+  listMHKH);
+
 		RequestDispatcher  requestDispatcher= req.getRequestDispatcher("view/chonMonHoc.jsp");
 		requestDispatcher.forward(req, resp);
 

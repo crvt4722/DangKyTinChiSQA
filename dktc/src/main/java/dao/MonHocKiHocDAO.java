@@ -19,7 +19,7 @@ public class MonHocKiHocDAO extends DAO {
 		ArrayList<MonHocKiHoc> kq = null;
 		String sql = "SELECT a.id as idmhkh, b.id as idmh, b.ten as tenmh, b.sotc as stc \r\n"
 				+ "				FROM monhockihoc a, monhoc b, sinhvienkhoa c , bomon d, khoa e\r\n"
-				+ "				WHERE d.Khoaid = e.id and c.id =? and a.KiHocid = ? AND b.id = a.MonHocid and  d.id = b.BoMonid "; 
+				+ "				WHERE d.Khoaid = e.id and c.id =? and a.KiHocid = ? AND b.id = a.MonHocid and  d.id = b.BoMonid and c.Khoaid = e.id"; 
 		try {
 			PreparedStatement cs = con.prepareStatement(sql);
 			cs.setInt(1, idSVK);

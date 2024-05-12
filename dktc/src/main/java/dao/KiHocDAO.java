@@ -25,6 +25,7 @@ public class KiHocDAO extends DAO {
 				if(kq == null) kq = new ArrayList<KiHoc>();
 				KiHoc kihoc = new KiHoc();
 				kihoc.setId(rs.getInt("idkihoc"));
+				kihoc.setDangdk(1);
 				//năm học
 				NamHoc nh = new NamHoc();
 				nh.setId(rs.getInt("idnamhoc"));

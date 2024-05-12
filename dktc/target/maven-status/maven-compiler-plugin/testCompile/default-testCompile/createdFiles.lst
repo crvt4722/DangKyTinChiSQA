@@ -1,0 +1,5 @@
+unittest\TestKiHocDAO.class
+unittest\TestLichHocDAO.class
+unittest\TestMonHocKiHocDAO.class
+unittest\TestDangKiDAO.class
+unittest\TestLopHocPhanDAO.class

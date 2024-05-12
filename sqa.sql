@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `sqa` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `sqa`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: sqa
@@ -41,7 +39,7 @@ CREATE TABLE `bomon` (
 
 LOCK TABLES `bomon` WRITE;
 /*!40000 ALTER TABLE `bomon` DISABLE KEYS */;
-INSERT INTO `bomon` VALUES (1,'CNTT','cntt',1),(2,'KHMT','khmt',1),(3,'KTMT','ktmt',1);
+INSERT INTO `bomon` VALUES (1,'CNTT','cntt',1),(2,'KHMT','khmt',1),(3,'KTMT','ktmt',1),(4,'ATTT','attt',2);
 /*!40000 ALTER TABLE `bomon` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +60,7 @@ CREATE TABLE `dangkihoc` (
   KEY `FKDangKiHoc638697` (`LopHocPhanid`),
   CONSTRAINT `FKDangKiHoc638697` FOREIGN KEY (`LopHocPhanid`) REFERENCES `lophocphan` (`id`),
   CONSTRAINT `FKDangKiHoc816078` FOREIGN KEY (`SinhVienKhoaid`) REFERENCES `sinhvienkhoa` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=988 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +69,7 @@ CREATE TABLE `dangkihoc` (
 
 LOCK TABLES `dangkihoc` WRITE;
 /*!40000 ALTER TABLE `dangkihoc` DISABLE KEYS */;
-INSERT INTO `dangkihoc` VALUES (7,NULL,4,1),(8,NULL,4,6),(9,NULL,4,10),(10,NULL,4,12);
+INSERT INTO `dangkihoc` VALUES (207,NULL,3,5),(208,NULL,3,2),(209,NULL,3,3),(210,NULL,3,7),(211,NULL,3,10),(212,NULL,3,11),(236,NULL,2,6),(269,NULL,4,2),(270,NULL,4,4),(271,NULL,4,6),(272,NULL,4,8);
 /*!40000 ALTER TABLE `dangkihoc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +170,7 @@ CREATE TABLE `khoa` (
   PRIMARY KEY (`id`),
   KEY `FKKhoa985266` (`Truongid`),
   CONSTRAINT `FKKhoa985266` FOREIGN KEY (`Truongid`) REFERENCES `truong` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,7 +179,7 @@ CREATE TABLE `khoa` (
 
 LOCK TABLES `khoa` WRITE;
 /*!40000 ALTER TABLE `khoa` DISABLE KEYS */;
-INSERT INTO `khoa` VALUES (1,'CNTT','cong nghe thong tin',1),(2,'ATTT','an toan thong tin',1);
+INSERT INTO `khoa` VALUES (1,'CNTT','cong nghe thong tin',1),(2,'ATTT','an toan thong tin',1),(3,'MKT','Marketing',1);
 /*!40000 ALTER TABLE `khoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,7 +276,7 @@ CREATE TABLE `lichhoc` (
 
 LOCK TABLES `lichhoc` WRITE;
 /*!40000 ALTER TABLE `lichhoc` DISABLE KEYS */;
-INSERT INTO `lichhoc` VALUES (1,'Lich hoc 1','no',1,1,1,1,5,1),(2,'Lich hoc 2','no',1,1,1,2,5,1),(3,'Lich hoc 3','no',1,1,1,3,5,1),(4,'Lich hoc 4','no',1,1,1,4,5,1),(5,'Lich hoc 5','no',1,1,1,5,5,1),(6,'Lich hoc 6','no',1,1,1,6,5,1),(7,'Lich hoc 7','no',2,2,2,1,6,2),(8,'Lich hoc 8','no',2,2,2,2,6,2),(9,'Lich hoc 9','no',2,2,2,3,6,2),(10,'Lich hoc 10','no',2,2,2,4,6,2),(11,'Lich hoc 11','no',2,2,2,5,6,2),(12,'Lich hoc 12','no',2,2,2,6,6,2),(13,'Lich hoc 13','no',1,3,1,1,7,3),(14,'Lich hoc 14','no',1,3,1,2,7,3),(15,'Lich hoc 15','no',1,3,1,3,7,3),(16,'Lich hoc 16','no',1,3,1,4,7,3),(17,'Lich hoc 17','no',1,3,1,5,7,3),(18,'Lich hoc 18','no',1,3,1,6,7,3),(19,'Lich hoc 19','no',3,1,3,1,8,4),(20,'Lich hoc 20','no',3,1,3,2,8,4),(21,'Lich hoc 21','no',3,1,3,3,8,4),(22,'Lich hoc 22','no',3,1,3,4,8,4),(23,'Lich hoc 23','no',3,1,3,5,8,4),(24,'Lich hoc 24','no',3,1,3,6,8,4),(44,'Lich hoc 25','no',4,3,3,1,9,5),(45,'Lich hoc 26','no',4,3,3,2,9,5),(46,'Lich hoc 27','no',4,3,3,3,9,5),(47,'Lich hoc 28','no',4,3,3,4,9,5),(48,'Lich hoc 29','no',4,3,3,5,9,5),(49,'Lich hoc 30','no',4,3,3,6,9,5),(50,'Lich hoc 31','no',5,4,2,1,10,6),(51,'Lich hoc 32','no',5,4,2,2,10,6),(52,'Lich hoc 33','no',5,4,2,3,10,6),(53,'Lich hoc 34','no',5,4,2,4,10,6),(54,'Lich hoc 35','no',5,4,2,5,10,6),(55,'Lich hoc 36','no',5,4,2,6,10,6),(56,'Lich hoc 37','no',3,3,1,1,5,7),(57,'Lich hoc 38','no',3,3,1,2,5,7),(58,'Lich hoc 39','no',3,3,1,3,5,7),(59,'Lich hoc 40','no',3,3,1,4,5,8),(60,'Lich hoc 41','no',3,3,1,5,5,8),(61,'Lich hoc 42','no',3,3,1,6,5,8),(62,'Lich hoc 43','no',5,2,5,1,6,9),(63,'Lich hoc 44','no',5,2,5,2,6,9),(64,'Lich hoc 45','no',5,2,5,3,6,9),(65,'Lich hoc 46','no',5,2,5,4,6,10),(66,'Lich hoc 47','no',5,2,5,5,6,10),(67,'Lich hoc 48','no',5,2,5,6,6,10),(68,'Lich hoc 49','no',4,1,6,1,7,11),(69,'Lich hoc 50','no',4,1,6,2,7,11),(70,'Lich hoc 51','no',4,1,6,3,7,11),(71,'Lich hoc 52','no',4,1,6,4,7,12),(72,'Lich hoc 53','no',4,1,6,5,7,12),(73,'Lich hoc 54','no',4,1,6,6,7,12);
+INSERT INTO `lichhoc` VALUES (1,'Lich hoc 1','no',1,1,1,1,5,1),(2,'Lich hoc 2','no',1,1,1,2,5,1),(3,'Lich hoc 3','no',1,1,1,3,5,1),(4,'Lich hoc 4','no',1,1,1,4,5,1),(5,'Lich hoc 5','no',1,1,1,5,5,1),(6,'Lich hoc 6','no',1,1,1,6,5,1),(7,'Lich hoc 7','no',2,2,2,1,6,2),(8,'Lich hoc 8','no',2,2,2,2,6,2),(9,'Lich hoc 9','no',2,2,2,3,6,2),(10,'Lich hoc 10','no',2,2,2,4,6,2),(11,'Lich hoc 11','no',2,2,2,5,6,2),(12,'Lich hoc 12','no',2,2,2,6,6,2),(13,'Lich hoc 13','no',1,3,1,1,7,3),(14,'Lich hoc 14','no',1,3,1,2,7,3),(15,'Lich hoc 15','no',1,3,1,3,7,3),(16,'Lich hoc 16','no',1,3,1,4,7,3),(17,'Lich hoc 17','no',1,3,1,5,7,3),(18,'Lich hoc 18','no',1,3,1,6,7,3),(19,'Lich hoc 19','no',3,1,3,1,8,4),(20,'Lich hoc 20','no',3,1,3,2,8,4),(21,'Lich hoc 21','no',3,1,3,3,8,4),(22,'Lich hoc 22','no',3,1,3,4,8,4),(23,'Lich hoc 23','no',3,1,3,5,8,4),(24,'Lich hoc 24','no',3,1,3,6,8,4),(44,'Lich hoc 25','no',4,3,3,1,9,5),(45,'Lich hoc 26','no',4,3,3,2,9,5),(46,'Lich hoc 27','no',4,3,3,3,9,5),(47,'Lich hoc 28','no',4,3,3,4,9,5),(48,'Lich hoc 29','no',4,3,3,5,9,5),(49,'Lich hoc 30','no',4,3,3,6,9,5),(50,'Lich hoc 31','no',5,4,2,1,10,6),(51,'Lich hoc 32','no',5,4,2,2,10,6),(52,'Lich hoc 33','no',5,4,2,3,10,6),(53,'Lich hoc 34','no',5,4,2,4,10,6),(54,'Lich hoc 35','no',5,4,2,5,10,6),(55,'Lich hoc 36','no',5,4,2,6,10,6),(56,'Lich hoc 37','no',3,3,1,1,5,7),(57,'Lich hoc 38','no',3,3,1,2,5,7),(58,'Lich hoc 39','no',3,3,1,3,5,7),(59,'Lich hoc 40','no',3,3,1,4,5,8),(60,'Lich hoc 41','no',3,3,1,5,5,8),(61,'Lich hoc 42','no',3,3,1,6,5,8),(65,'Lich hoc 46','no',5,2,5,4,6,10),(68,'Lich hoc 49','no',4,1,6,1,7,11),(69,'Lich hoc 50','no',4,1,6,2,7,12),(70,'Lich hoc 51','no',4,2,5,4,6,13);
 /*!40000 ALTER TABLE `lichhoc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,7 +297,7 @@ CREATE TABLE `lophocphan` (
   PRIMARY KEY (`id`),
   KEY `FKLopHocPhan891132` (`MonHocKiHocid`),
   CONSTRAINT `FKLopHocPhan891132` FOREIGN KEY (`MonHocKiHocid`) REFERENCES `monhockihoc` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,7 +306,7 @@ CREATE TABLE `lophocphan` (
 
 LOCK TABLES `lophocphan` WRITE;
 /*!40000 ALTER TABLE `lophocphan` DISABLE KEYS */;
-INSERT INTO `lophocphan` VALUES (1,'Lop hoc phan 1',60,1,'no',1),(2,'Lop hoc phan 2',60,0,'no',1),(3,'Lop hoc phan 3',60,0,'no',2),(4,'Lop hoc phan 4',60,0,'no',2),(5,'Lop hoc phan 5',60,0,'no',3),(6,'Lop hoc phan 6',60,1,'no',3),(7,'Lop hoc phan 7',60,0,'no',4),(8,'Lop hoc phan 8',60,0,'no',4),(9,'Lop hoc phan 9',60,0,'no',5),(10,'Lop hoc phan 10',60,1,'no',5),(11,'Lop hoc phan 11',60,0,'no',6),(12,'Lop hoc phan 12',60,1,'no',6);
+INSERT INTO `lophocphan` VALUES (1,'Lớp học phần 13',60,30,'no',1),(2,'Lớp học phần 2',60,4,'no',1),(3,'Lớp học phần 3',60,5,'no',2),(4,'Lớp học phần 4',60,1,'no',2),(5,'Lớp học phần 5',60,5,'no',3),(6,'Lớp học phần 6',60,2,'no',3),(7,'Lớp học phần 7',60,6,'no',4),(8,'Lớp học phần 8',60,0,'no',4),(10,'Lớp học phần 10',60,3,'no',5),(11,'Lớp học phần 11',60,3,'no',6),(12,'Lớp học phần 12',60,0,'no',6),(13,'Lớp học phần 13',60,0,'no',6),(14,'Lớp học phần 14',60,0,'no',6);
 /*!40000 ALTER TABLE `lophocphan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,7 +326,7 @@ CREATE TABLE `monhoc` (
   PRIMARY KEY (`id`),
   KEY `FKMonHoc258682` (`BoMonid`),
   CONSTRAINT `FKMonHoc258682` FOREIGN KEY (`BoMonid`) REFERENCES `bomon` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -337,7 +335,7 @@ CREATE TABLE `monhoc` (
 
 LOCK TABLES `monhoc` WRITE;
 /*!40000 ALTER TABLE `monhoc` DISABLE KEYS */;
-INSERT INTO `monhoc` VALUES (1,'Đảm bảo chất lượng phần mềm',3,'no',1),(2,'Thiết kế hệ thống thông tin',3,'no',1),(3,'Lập trình Java',4,'no',2),(4,'Thiết kế phần mềm hướng dịch vụ',3,'no',1),(5,'Lập trình thiết bị di động',3,'no',1),(6,'Thiết kế hệ thống nhúng',3,'no',1);
+INSERT INTO `monhoc` VALUES (1,'Đảm bảo chất lượng phần mềm',3,'no',1),(2,'Thiết kế hệ thống thông tin',3,'no',1),(3,'Lập trình Java',4,'no',2),(4,'Thiết kế phần mềm hướng dịch vụ',3,'no',1),(5,'Lập trình thiết bị di động',3,'no',1),(6,'Thiết kế hệ thống nhúng',3,'no',1),(7,'An toàn thông tin',3,'no',4);
 /*!40000 ALTER TABLE `monhoc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -357,7 +355,7 @@ CREATE TABLE `monhockihoc` (
   KEY `FKMonHocKiHo474327` (`KiHocid`),
   CONSTRAINT `FKMonHocKiHo474327` FOREIGN KEY (`KiHocid`) REFERENCES `kihoc` (`id`),
   CONSTRAINT `FKMonHocKiHo706379` FOREIGN KEY (`MonHocid`) REFERENCES `monhoc` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -366,7 +364,7 @@ CREATE TABLE `monhockihoc` (
 
 LOCK TABLES `monhockihoc` WRITE;
 /*!40000 ALTER TABLE `monhockihoc` DISABLE KEYS */;
-INSERT INTO `monhockihoc` VALUES (1,1,2),(2,2,2),(3,3,2),(4,4,2),(5,5,2),(6,6,2);
+INSERT INTO `monhockihoc` VALUES (1,1,2),(2,2,2),(3,3,2),(4,4,2),(5,5,2),(6,6,2),(7,7,2);
 /*!40000 ALTER TABLE `monhockihoc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -520,7 +518,7 @@ CREATE TABLE `sinhvien` (
 
 LOCK TABLES `sinhvien` WRITE;
 /*!40000 ALTER TABLE `sinhvien` DISABLE KEYS */;
-INSERT INTO `sinhvien` VALUES ('B20DCCN570',1),('B20DCCN001',2),('B20DCCN002',3),('B20DCCN003',4);
+INSERT INTO `sinhvien` VALUES ('B20DCCN570',1),('B20DCCN001',2),('B20DCCN002',3),('B20DCCN003',4),('B20DCCN007',12);
 /*!40000 ALTER TABLE `sinhvien` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -542,7 +540,7 @@ CREATE TABLE `sinhvienkhoa` (
   KEY `FKSinhVienKh803325` (`Khoaid`),
   CONSTRAINT `FKSinhVienKh65841` FOREIGN KEY (`SinhVienid`) REFERENCES `sinhvien` (`ThanhVienid`),
   CONSTRAINT `FKSinhVienKh803325` FOREIGN KEY (`Khoaid`) REFERENCES `khoa` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -551,7 +549,7 @@ CREATE TABLE `sinhvienkhoa` (
 
 LOCK TABLES `sinhvienkhoa` WRITE;
 /*!40000 ALTER TABLE `sinhvienkhoa` DISABLE KEYS */;
-INSERT INTO `sinhvienkhoa` VALUES (1,'2020',1,1,1),(2,'2020',1,2,1),(3,'2020',1,3,1),(4,'2020',1,4,1);
+INSERT INTO `sinhvienkhoa` VALUES (1,'2020',1,1,1),(2,'2020',1,2,1),(3,'2020',1,3,1),(4,'2020',1,4,1),(5,'2020',1,12,2),(6,'2021',1,12,3);
 /*!40000 ALTER TABLE `sinhvienkhoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -577,7 +575,7 @@ CREATE TABLE `thanhvien` (
   PRIMARY KEY (`id`),
   KEY `FKThanhVien235359` (`DiaChiid`),
   CONSTRAINT `FKThanhVien235359` FOREIGN KEY (`DiaChiid`) REFERENCES `diachi` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -586,7 +584,7 @@ CREATE TABLE `thanhvien` (
 
 LOCK TABLES `thanhvien` WRITE;
 /*!40000 ALTER TABLE `thanhvien` DISABLE KEYS */;
-INSERT INTO `thanhvien` VALUES (1,'Sông','123','Trần Văn','Sông','2002-06-27','songtran02@gmail.com','0000101010','note','Sinh viên',1),(2,'Student','1234','Trần Văn','A','2024-04-01','admin@gmail.com','0000101010','note','Sinh Viên',2),(3,'Student','12345','Trần Văn','B','2024-04-01','admin@gmail.com','0000101010','note','Sinh Viên',3),(4,'Student','123456','Trần Văn','C','2024-04-01','Ctran@gmail.com','0000101010','note','Sinh Viên',4),(5,'Teacher','123','Nguyen Van','Son','1990-04-01','dtran@gmail.com','0001231312','note','Giang Vien',1),(6,'Teacher','1234','Nguyen Van','Ngoc','1989-04-01','etran@gmail.com','0000123123','note','Giang Vien',3),(7,'GiangVien','123','Nguyen Thi','Bich Ngoc','2002-04-01','ngoc@gmail.com','0001231233','note','Giang Vien',4),(8,'GiangVien','1234','Nguyen Manh','Hung','1999-04-01','hung@gmail.com','0000123132','note ','Giang Vien',3),(9,'GiangVien','12345','Dang Ngoc','Hung','1999-04-01','hung01@gmail.com','0000123312','note','Giang Vien',4),(10,'GiangVien','123456','Nguyen Thi','Van Anh','1999-04-01','va@gmail.com','0000123213','note','Giang Vien',3),(11,'GiangVien','111','Vu Hoai','Nam','0199-04-01','nam@gmail.com','0000012313','note','Giang Vien',4);
+INSERT INTO `thanhvien` VALUES (1,'Student','123','Trần Văn','Sông','2002-06-27','songtran02@gmail.com','0000101010','note','Sinh viên',1),(2,'Student','1234','Trần Văn','A','2024-04-01','admin@gmail.com','0000101010','note','Sinh Viên',2),(3,'Student','12345','Trần Văn','B','2024-04-01','admin@gmail.com','0000101010','note','Sinh Viên',3),(4,'Student','123456','Trần Văn','C','2024-04-01','Ctran@gmail.com','0000101010','note','Sinh Viên',4),(5,'Teacher','123','Nguyen Van','Son','1990-04-01','dtran@gmail.com','0001231312','note','Giang Vien',1),(6,'Teacher','1234','Nguyen Van','Ngoc','1989-04-01','etran@gmail.com','0000123123','note','Giang Vien',3),(7,'GiangVien','123','Nguyen Thi','Bich Ngoc','2002-04-01','ngoc@gmail.com','0001231233','note','Giang Vien',4),(8,'GiangVien','1234','Nguyen Manh','Hung','1999-04-01','hung@gmail.com','0000123132','note ','Giang Vien',3),(9,'GiangVien','12345','Dang Ngoc','Hung','1999-04-01','hung01@gmail.com','0000123312','note','Giang Vien',4),(10,'GiangVien','123456','Nguyen Thi','Van Anh','1999-04-01','va@gmail.com','0000123213','note','Giang Vien',3),(11,'GiangVien','111','Vu Hoai','Nam','0199-04-01','nam@gmail.com','0000012313','note','Giang Vien',4),(12,'Student','1234567','AA','A','2002-01-01','a@gmail.com','0124345215','note','Sinh Viên',1);
 /*!40000 ALTER TABLE `thanhvien` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -680,4 +678,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-09 15:04:07
+-- Dump completed on 2024-05-12 18:49:05

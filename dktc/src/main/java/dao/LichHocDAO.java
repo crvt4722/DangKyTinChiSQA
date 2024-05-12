@@ -68,7 +68,6 @@ public class LichHocDAO extends DAO {
 					ki.setId(rs.getInt("Kipid"));
 					ki.setTen(rs.getString("tenkip"));
 					lichhoc.setKip(ki);
-					System.out.println(lichhoc);
 					kq.add(lichhoc);
 			}
 		} catch (Exception e) {

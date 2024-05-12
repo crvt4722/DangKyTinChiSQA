@@ -40,13 +40,13 @@ public class SinhVienKhoaDAO extends DAO {
 				sv.setEmail(rs.getString("email"));
 				sv.setDt(rs.getString("dt"));
 				svk.setSinhVien(sv);
+				svk.setDangHoc(1);
 				// khoa
 				Khoa k = new Khoa();
 				k.setId(rs.getInt("idkhoa"));
 				k.setTen(rs.getString("tenkhoa"));
 				svk.setKhoa(k);
 				kq.add(svk);
-				System.out.println(svk);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
