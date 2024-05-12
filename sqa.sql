@@ -306,7 +306,7 @@ CREATE TABLE `lophocphan` (
 
 LOCK TABLES `lophocphan` WRITE;
 /*!40000 ALTER TABLE `lophocphan` DISABLE KEYS */;
-INSERT INTO `lophocphan` VALUES (1,'Lớp học phần 13',60,30,'no',1),(2,'Lớp học phần 2',60,4,'no',1),(3,'Lớp học phần 3',60,5,'no',2),(4,'Lớp học phần 4',60,1,'no',2),(5,'Lớp học phần 5',60,5,'no',3),(6,'Lớp học phần 6',60,2,'no',3),(7,'Lớp học phần 7',60,6,'no',4),(8,'Lớp học phần 8',60,0,'no',4),(10,'Lớp học phần 10',60,3,'no',5),(11,'Lớp học phần 11',60,3,'no',6),(12,'Lớp học phần 12',60,0,'no',6),(13,'Lớp học phần 13',60,0,'no',6),(14,'Lớp học phần 14',60,0,'no',6);
+INSERT INTO `lophocphan` VALUES (1,'Lớp học phần 1',60,30,'no',1),(2,'Lớp học phần 2',60,4,'no',1),(3,'Lớp học phần 3',60,5,'no',2),(4,'Lớp học phần 4',60,1,'no',2),(5,'Lớp học phần 5',60,5,'no',3),(6,'Lớp học phần 6',60,2,'no',3),(7,'Lớp học phần 7',60,6,'no',4),(8,'Lớp học phần 8',60,0,'no',4),(10,'Lớp học phần 10',60,3,'no',5),(11,'Lớp học phần 11',60,3,'no',6),(12,'Lớp học phần 12',60,0,'no',6),(13,'Lớp học phần 13',60,0,'no',6),(14,'Lớp học phần 14',60,0,'no',6);
 /*!40000 ALTER TABLE `lophocphan` ENABLE KEYS */;
 UNLOCK TABLES;
 
